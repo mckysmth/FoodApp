@@ -4,7 +4,7 @@
              x:Class="FoodApp.RestaurantSearch">
     <StackLayout Margin="30">
                    
-            <Picker Title="--Food Mood--" x:Name = "FoodTypePicker" SelectedIndexChanged="FoodTypePicker_OnSelectedIndexChanged"/>
+            <Picker Title="-- Mood--" x:Name = "FoodTypePicker" SelectedIndexChanged="FoodTypePicker_OnSelectedIndexChanged"/>
         </StackLayout >
 
 </ContentPage>
