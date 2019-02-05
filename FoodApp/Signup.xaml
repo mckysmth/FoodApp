@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodApp.Signup">
+
+    <ScrollView>
+        <StackLayout VerticalOptions="Center" Margin="90, 40, 90, 0">
+            <Entry x:Name="frstnm" Placeholder="First Name"></Entry>
+            <Entry x:Name="lstnm" Placeholder="Last Name"></Entry>
+
+            <Entry x:Name="email" Placeholder="Email"></Entry>
+            <Entry x:Name="newpsswrd" Placeholder="Password" IsPassword="True"></Entry>
+            <Entry x:Name="confirmpsswrd" Placeholder="Confirm Password" IsPassword="True"></Entry>
+            <Label x:Name="dob" Text="Date Of Birth"></Label>
+            <DatePicker></DatePicker>
+            <Label x:Name="hght" Text="Height"></Label>
+            <Editor></Editor>
+            <Label x:Name="wgth" Text="Weight"></Label>
+            <Editor></Editor>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Save Password"></Label>
+                <Switch IsToggled="False"></Switch>
+            </StackLayout>
+            <Button x:Name="signupbtn" Clicked="Signupbtn_Clicked" Text="Sign Up"></Button>
+            <Label Text="Already have account? Sign In" TextColor="Blue"></Label>
+        </StackLayout>
+    </ScrollView>
+    <!--grtggtgtrtg-->
+</ContentPage>
