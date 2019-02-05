@@ -23,7 +23,10 @@ namespace FoodApp
     {
       signUp.firstName = frstnm.Text;
       signUp.lastName = lstnm.Text;
-      //finish
+      signUp.email = email.Text;
+      signUp.password = newpsswrd.Text;
+      float.TryParse(hght.Text, out signUp.height);
+      float.TryParse(wgth.Text, out signUp.weight);
     }
   }
 }
