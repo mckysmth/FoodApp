@@ -11,7 +11,7 @@ namespace FoodApp
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new NavPage());
         }
 
         protected override void OnStart()

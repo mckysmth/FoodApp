@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FoodApp.Model;
+using MongoDB.Driver;
 using Xamarin.Forms;
 
 namespace FoodApp
@@ -12,6 +14,7 @@ namespace FoodApp
         public MainPage()
         {
             InitializeComponent();
+            //var collection = Client.GetUserCollection(); 
         }
     }
 }
