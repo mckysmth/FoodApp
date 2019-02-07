@@ -2,24 +2,36 @@
 <ContentPage Title="Profile" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FoodApp" x:Class="FoodApp.MainPage">
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Personal Profile"
-          />
+
+
+
+        <Label Text="Profile Settings" Font="Bold, Large" />
+
+        <Button Text="Edit Profile" BackgroundColor="YellowGreen"   
+                 />
+
 
         <Label Text=" First Name:"
-               HorizontalOptions="Start"
+               HorizontalOptions="Start"     
               />
-        <Entry Placeholder="Dope" HorizontalOptions="CenterAndExpand"/>
+
+        <Entry Text="   " />
         <Label Text="Last Name:"
                HorizontalOptions="StartAndExpand"
               />
-        <Entry Placeholder="Dope" HorizontalOptions="CenterAndExpand"/>
+        <Entry Text="   " />
         <Label Text="Date of Birth:"
                HorizontalOptions="StartAndExpand"
               />
-        <Entry Placeholder="Dope" HorizontalOptions="CenterAndExpand"/>
-        <Label Text="Daniel" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
-       
+        <Entry Text="   " />
+        <Label Text=" Current Weight:"
+               HorizontalOptions="Start"     
+              />
+        <Entry Text="   " />
 
-       
+        <Label Text="Height:"
+               HorizontalOptions="Start"     
+              />
+        <Entry Text="   " />
     </StackLayout>
 </ContentPage>
