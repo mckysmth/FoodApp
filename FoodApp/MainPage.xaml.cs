@@ -14,7 +14,7 @@ namespace FoodApp
         public MainPage()
         {
             InitializeComponent();
-            //var collection = Client.GetUserCollection(); 
+            var collection = Client.GetUserCollection(); 
         }
     }
 }
