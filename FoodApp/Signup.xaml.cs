@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodApp.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,16 +18,14 @@ namespace FoodApp
       InitializeComponent();
     }
 
-    SignUp signUp = new SignUp();
+   
 
     private void Signupbtn_Clicked(object sender, EventArgs e)
     {
-      signUp.firstName = frstnm.Text;
-      signUp.lastName = lstnm.Text;
-      signUp.email = email.Text;
-      signUp.password = newpsswrd.Text;
-      float.TryParse(hght.Text, out signUp.height);
-      float.TryParse(wgth.Text, out signUp.weight);
+      DateTime x = new DateTime(-1, 1, 1); //placeholder
+      
+      User user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, x, float.Parse(hght.Text),float.Parse(wgth.Text));
+     
     }
   }
 }
