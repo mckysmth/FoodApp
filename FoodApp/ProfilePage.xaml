@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodApp.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Place new controls here -->
+
+
+
+            <Label Text="Profile Settings" Font="Bold, Large" />
+
+            <Button Text="Edit Profile" BackgroundColor="YellowGreen"   
+                 />
+
+
+            <Label Text=" First Name:"
+               HorizontalOptions="Start"     
+              />
+
+            <Entry Text="   " />
+            <Label Text="Last Name:"
+               HorizontalOptions="StartAndExpand"
+              />
+            <Entry Text="   " />
+            <Label Text="Date of Birth:"
+               HorizontalOptions="StartAndExpand"
+              />
+            <Entry Text="   " />
+            <Label Text=" Current Weight:"
+               HorizontalOptions="Start"     
+              />
+            <Entry Text="   " />
+
+            <Label Text="Height:"
+               HorizontalOptions="Start"     
+              />
+            <Entry Text="   " />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
