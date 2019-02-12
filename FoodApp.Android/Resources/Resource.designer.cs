@@ -40,10 +40,13 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_bottom_sheet_slide_out = global::FoodApp.Droid.Resource.Animation.design_bottom_sheet_slide_out;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_in = global::FoodApp.Droid.Resource.Animation.design_snackbar_in;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.design_snackbar_out = global::FoodApp.Droid.Resource.Animation.design_snackbar_out;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromLeft = global::FoodApp.Droid.Resource.Animation.EnterFromLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.EnterFromRight = global::FoodApp.Droid.Resource.Animation.EnterFromRight;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToLeft = global::FoodApp.Droid.Resource.Animation.ExitToLeft;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.ExitToRight = global::FoodApp.Droid.Resource.Animation.ExitToRight;
+=======
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.tooltip_enter = global::FoodApp.Droid.Resource.Animation.tooltip_enter;
 			global::Xamarin.Forms.Platform.Android.Resource.Animation.tooltip_exit = global::FoodApp.Droid.Resource.Animation.tooltip_exit;
 			global::Xamarin.Forms.Platform.Android.Resource.Animator.design_appbar_state_list_animator = global::FoodApp.Droid.Resource.Animator.design_appbar_state_list_animator;
@@ -813,8 +816,11 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.beginning = global::FoodApp.Droid.Resource.Id.beginning;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.blocking = global::FoodApp.Droid.Resource.Id.blocking;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.bottom = global::FoodApp.Droid.Resource.Id.bottom;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_navarea = global::FoodApp.Droid.Resource.Id.bottomtab_navarea;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.bottomtab_tabbar = global::FoodApp.Droid.Resource.Id.bottomtab_tabbar;
+=======
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Id.buttonPanel = global::FoodApp.Droid.Resource.Id.buttonPanel;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.cancel_action = global::FoodApp.Droid.Resource.Id.cancel_action;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.center = global::FoodApp.Droid.Resource.Id.center;
@@ -850,8 +856,11 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_horizontal = global::FoodApp.Droid.Resource.Id.fill_horizontal;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.fill_vertical = global::FoodApp.Droid.Resource.Id.fill_vertical;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.@fixed = global::FoodApp.Droid.Resource.Id.@fixed;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_appbar = global::FoodApp.Droid.Resource.Id.flyoutcontent_appbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.flyoutcontent_recycler = global::FoodApp.Droid.Resource.Id.flyoutcontent_recycler;
+=======
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Id.forever = global::FoodApp.Droid.Resource.Id.forever;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.ghost_view = global::FoodApp.Droid.Resource.Id.ghost_view;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.home = global::FoodApp.Droid.Resource.Id.home;
@@ -869,10 +878,13 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.line3 = global::FoodApp.Droid.Resource.Id.line3;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.listMode = global::FoodApp.Droid.Resource.Id.listMode;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.list_item = global::FoodApp.Droid.Resource.Id.list_item;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Id.main_appbar = global::FoodApp.Droid.Resource.Id.main_appbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.main_scrollview = global::FoodApp.Droid.Resource.Id.main_scrollview;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.main_tablayout = global::FoodApp.Droid.Resource.Id.main_tablayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.main_toolbar = global::FoodApp.Droid.Resource.Id.main_toolbar;
+=======
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Id.masked = global::FoodApp.Droid.Resource.Id.masked;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.media_actions = global::FoodApp.Droid.Resource.Id.media_actions;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.message = global::FoodApp.Droid.Resource.Id.message;
@@ -916,9 +928,12 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Id.search_src_text = global::FoodApp.Droid.Resource.Id.search_src_text;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.search_voice_btn = global::FoodApp.Droid.Resource.Id.search_voice_btn;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.select_dialog_listview = global::FoodApp.Droid.Resource.Id.select_dialog_listview;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_appbar = global::FoodApp.Droid.Resource.Id.shellcontent_appbar;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_scrollview = global::FoodApp.Droid.Resource.Id.shellcontent_scrollview;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.shellcontent_toolbar = global::FoodApp.Droid.Resource.Id.shellcontent_toolbar;
+=======
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Id.shortcut = global::FoodApp.Droid.Resource.Id.shortcut;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showCustom = global::FoodApp.Droid.Resource.Id.showCustom;
 			global::Xamarin.Forms.Platform.Android.Resource.Id.showHome = global::FoodApp.Droid.Resource.Id.showHome;
@@ -1000,7 +1015,10 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_dropdown_item_icons_2line = global::FoodApp.Droid.Resource.Layout.abc_search_dropdown_item_icons_2line;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_search_view = global::FoodApp.Droid.Resource.Layout.abc_search_view;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.abc_select_dialog_material = global::FoodApp.Droid.Resource.Layout.abc_select_dialog_material;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.BottomTabLayout = global::FoodApp.Droid.Resource.Layout.BottomTabLayout;
+=======
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_navigation_item = global::FoodApp.Droid.Resource.Layout.design_bottom_navigation_item;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_bottom_sheet_dialog = global::FoodApp.Droid.Resource.Layout.design_bottom_sheet_dialog;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_layout_snackbar = global::FoodApp.Droid.Resource.Layout.design_layout_snackbar;
@@ -1015,7 +1033,10 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu = global::FoodApp.Droid.Resource.Layout.design_navigation_menu;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_navigation_menu_item = global::FoodApp.Droid.Resource.Layout.design_navigation_menu_item;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.design_text_input_password_icon = global::FoodApp.Droid.Resource.Layout.design_text_input_password_icon;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.FlyoutContent = global::FoodApp.Droid.Resource.Layout.FlyoutContent;
+=======
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action = global::FoodApp.Droid.Resource.Layout.notification_action;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_action_tombstone = global::FoodApp.Droid.Resource.Layout.notification_action_tombstone;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_media_action = global::FoodApp.Droid.Resource.Layout.notification_media_action;
@@ -1031,11 +1052,17 @@ namespace FoodApp.Droid
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_media_custom = global::FoodApp.Droid.Resource.Layout.notification_template_media_custom;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_chronometer = global::FoodApp.Droid.Resource.Layout.notification_template_part_chronometer;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.notification_template_part_time = global::FoodApp.Droid.Resource.Layout.notification_template_part_time;
+<<<<<<< HEAD
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.RootLayout = global::FoodApp.Droid.Resource.Layout.RootLayout;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_item_material = global::FoodApp.Droid.Resource.Layout.select_dialog_item_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_multichoice_material = global::FoodApp.Droid.Resource.Layout.select_dialog_multichoice_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_singlechoice_material = global::FoodApp.Droid.Resource.Layout.select_dialog_singlechoice_material;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.ShellContent = global::FoodApp.Droid.Resource.Layout.ShellContent;
+=======
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_item_material = global::FoodApp.Droid.Resource.Layout.select_dialog_item_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_multichoice_material = global::FoodApp.Droid.Resource.Layout.select_dialog_multichoice_material;
+			global::Xamarin.Forms.Platform.Android.Resource.Layout.select_dialog_singlechoice_material = global::FoodApp.Droid.Resource.Layout.select_dialog_singlechoice_material;
+>>>>>>> 7b08b738530608b0aaafa5a09d5bb2010236c4a1
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.support_simple_spinner_dropdown_item = global::FoodApp.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::Xamarin.Forms.Platform.Android.Resource.Layout.tooltip = global::FoodApp.Droid.Resource.Layout.tooltip;
 			global::Xamarin.Forms.Platform.Android.Resource.String.abc_action_bar_home_description = global::FoodApp.Droid.Resource.String.abc_action_bar_home_description;
