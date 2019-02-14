@@ -1,4 +1,5 @@
 ﻿using FoodApp.Model;
+using FoodApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,23 +11,33 @@ using Xamarin.Forms.Xaml;
 
 namespace FoodApp
 {
-  [XamlCompilation(XamlCompilationOptions.Compile)]
-  public partial class Signup : ContentPage
-  {
-    public Signup()
+[XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Signup : ContentPage
     {
-      InitializeComponent();
-    }
+        User user;
+        public Signup()
+        {
+            InitializeComponent();
+            user = null;
+        }
 
-   
 
-    private void Signupbtn_Clicked(object sender, EventArgs e)
-    {
-    
-      DateTime dOB = dob.Date;
-      
-      User user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text),float.Parse(wgth.Text));
-     
+
+        private async void Signupbtn_Clicked(object sender, EventArgs e)
+        {
+
+            DateTime dOB = dob.Date;
+
+            user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text),float.Parse(wgth.Text));
+
+            if (user != null)
+            {
+                MongoService mongoService = new MongoService();
+
+
+                await mongoService.InsertNewUser(user);
+            }
+
+        }
     }
-  }
 }
