@@ -35,6 +35,23 @@ namespace FoodApp.Services
             await UserCollection.InsertOneAsync(user);
         }
 
+        public async Task<List<User>> GetAllUsers()
+        {
+            try
+            {
+                var allTasks = await UserCollection
+                    .Find(new BsonDocument())
+                    .ToListAsync();
+
+                return allTasks;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.Message);
+            }
+            return null;
+        }
+
 
         private IMongoDatabase ConnectDB()
         {
