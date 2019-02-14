@@ -13,10 +13,10 @@
             <Entry x:Name="confirmpsswrd" Placeholder="Confirm Password" IsPassword="True"></Entry>
             <Label  Text="Date Of Birth"></Label>
             <DatePicker x:Name="dob"></DatePicker>
-            <Label x:Name="hght" Text="Height"></Label>
-            <Editor></Editor>
-            <Label x:Name="wgth" Text="Weight"></Label>
-            <Editor></Editor>
+            <Label Text="Height"></Label>
+            <Editor x:Name="hght" ></Editor>
+            <Label  Text="Weight"></Label>
+            <Editor x:Name="wgth"></Editor>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Save Password"></Label>
                 <Switch IsToggled="False"></Switch>
