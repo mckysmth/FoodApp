@@ -4,6 +4,8 @@ using System.Text;
 
 namespace FoodApp
 {
+
+  //this class will be obsolete when we make the user object
   class SignUp
   {
     public string firstName;

@@ -4,6 +4,13 @@
         
         <StackLayout>
             <Button x:Name="MainPageBtn" Text="MainPage" Clicked="MainPageBtn_Clicked"/>
+
+            <Button x:Name="ProfilePageBtn" Text="Profile Page" Clicked="ProfilePageBtn_Clicked"/>
+
+            <Button x:Name="UserLoginBtn" Text="Log in" Clicked="UserLoginBtn_Clicked"/>
+
+            <Button x:Name="SignUpBtn" Text="Sign Up" Clicked="SignUpBtn_Clicked"/>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

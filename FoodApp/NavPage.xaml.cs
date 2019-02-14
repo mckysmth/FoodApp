@@ -14,7 +14,22 @@ namespace FoodApp
 
         void MainPageBtn_Clicked(object sender, System.EventArgs e)
         {
-            Navigation.PushAsync(new MainPage());
+            //Navigation.PushAsync(new MainPage());
+        }
+
+         void ProfilePageBtn_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new ProfilePage());
+        }
+
+         void UserLoginBtn_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Login());
+        }
+
+         void SignUpBtn_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Signup());
         }
     }
 }

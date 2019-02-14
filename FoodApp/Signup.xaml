@@ -4,7 +4,7 @@
              x:Class="FoodApp.Signup">
 
     <ScrollView>
-        <StackLayout VerticalOptions="Center" Margin="90, 40, 90, 0">
+        <StackLayout VerticalOptions="Center" Margin="10, 40, 10, 0">
             <Entry x:Name="frstnm" Placeholder="First Name"></Entry>
             <Entry x:Name="lstnm" Placeholder="Last Name"></Entry>
 
