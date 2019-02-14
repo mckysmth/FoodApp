@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FoodApp.Model;
-using MongoDB.Driver;
+using FoodApp.Services;
 using Xamarin.Forms;
 
 namespace FoodApp
@@ -14,7 +14,14 @@ namespace FoodApp
         public MainPage()
         {
             InitializeComponent();
-            Client.GetUserCollection().InsertOne(new User()); 
+
+            TestMethod();
+        }
+
+        private async Task TestMethod()
+        {
+            MongoService mongoService = new MongoService();
+            await mongoService.InsertNewUser(new User());
         }
     }
 }

@@ -22,5 +22,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android" />
   </ItemGroup>
 </Project>
