@@ -22,9 +22,10 @@ namespace FoodApp
 
     private void Signupbtn_Clicked(object sender, EventArgs e)
     {
-      DateTime x = new DateTime(-1, 1, 1); //placeholder
+    
+      DateTime dOB = dob.Date;
       
-      User user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, x, float.Parse(hght.Text),float.Parse(wgth.Text));
+      User user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text),float.Parse(wgth.Text));
      
     }
   }
