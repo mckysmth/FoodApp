@@ -55,7 +55,7 @@ namespace FoodApp
         {
             bool flag = ValidatorExtensions.ArePasswordsEqual(newpsswrd.Text, confirmpsswrd.Text);
 
-            if (flag)
+            if (!flag)
             {
                 DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
             }
