@@ -30,6 +30,27 @@ namespace FoodApp.Services
             }
         }
 
+
+        private IMongoDatabase ConnectDB()
+        {
+            // APIKeys.Connection string is found in the portal under the "Connection String" blade
+            MongoClientSettings settings = MongoClientSettings.FromUrl(
+              new MongoUrl("mongodb://food-app:UjsUsROtZnTaR7v2yM7bvW1nOWea68VwRLiJ6IaMbo4QvEctRpAVSv85pejGMBFmxwnus1LsmUjrTGhbVSUswQ==@food-app.documents.azure.com:10255/?ssl=true&replicaSet=globaldb")
+            );
+
+            settings.SslSettings =
+                new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
+
+            // Initialize the client
+            var mongoClient = new MongoClient(settings);
+
+            // This will create or get the database
+            var db = mongoClient.GetDatabase(dbName);
+
+            return db;
+        }
+
+
         public async Task InsertNewUser(User user)
         {
             await UserCollection.InsertOneAsync(user);
@@ -50,26 +71,6 @@ namespace FoodApp.Services
                 System.Diagnostics.Debug.WriteLine(ex.Message);
             }
             return null;
-        }
-
-
-        private IMongoDatabase ConnectDB()
-        {
-            // APIKeys.Connection string is found in the portal under the "Connection String" blade
-            MongoClientSettings settings = MongoClientSettings.FromUrl(
-              new MongoUrl("mongodb://food-app:UjsUsROtZnTaR7v2yM7bvW1nOWea68VwRLiJ6IaMbo4QvEctRpAVSv85pejGMBFmxwnus1LsmUjrTGhbVSUswQ==@food-app.documents.azure.com:10255/?ssl=true&replicaSet=globaldb")
-            );
-
-            settings.SslSettings =
-                new SslSettings() { EnabledSslProtocols = SslProtocols.Tls12 };
-
-            // Initialize the client
-            var mongoClient = new MongoClient(settings);
-
-            // This will create or get the database
-            var db = mongoClient.GetDatabase(dbName);
-
-            return db;
         }
 
     }

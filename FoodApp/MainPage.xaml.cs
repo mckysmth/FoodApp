@@ -20,7 +20,7 @@ namespace FoodApp
         private async Task TestMethod()
         {
             MongoService mongoService = new MongoService();
-            //await mongoService.InsertNewUser(new User());
+            await mongoService.InsertNewUser(new User("", "", "", "", DateTime.Now, 11, 11));
         }
     }
 }
