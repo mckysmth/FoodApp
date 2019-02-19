@@ -23,22 +23,29 @@ namespace FoodApp
 
 
 
-        private async void Signupbtn_Clicked(object sender, EventArgs e)
+    private async void Signupbtn_Clicked(object sender, EventArgs e)
+    {
+      if (frstnm.Text == null || lstnm.Text == null || email.Text == null || newpsswrd.Text == null || dob.Date == null || hght.Text == null || wgth.Text == null)
+      {
+        DisplayAlert("Empty field error", "please verify you entered all the required information and try again", "OK");
+      }
+      else
+      {
+        DateTime dOB = dob.Date;
+
+        user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
+
+
+        if (user != null)
         {
-
-            DateTime dOB = dob.Date;
-
-            user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text),float.Parse(wgth.Text));
-
-            if (user != null)
-            {
-                MongoService mongoService = new MongoService();
+          MongoService mongoService = new MongoService();
 
 
-                await mongoService.InsertNewUser(user);
-            }
-
+          await mongoService.InsertNewUser(user);
         }
+
+      }
+    }
 
         private void Email_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -55,7 +62,7 @@ namespace FoodApp
         {
             bool flag = ValidatorExtensions.ArePasswordsEqual(newpsswrd.Text, confirmpsswrd.Text);
 
-            if (flag)
+            if (!flag)
             {
                 DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
             }
