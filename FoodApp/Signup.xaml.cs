@@ -39,5 +39,33 @@ namespace FoodApp
             }
 
         }
+
+        private void Email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bool result = ValidatorExtensions.IsValidEmailAddress(email.Text);
+
+            if (!result)
+            {
+                DisplayAlert("Invalid e-mail", "please write a valid email", "OK");
+            }
+
+        }
+
+        private void Confirmpsswrd_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bool flag = ValidatorExtensions.ArePasswordsEqual(newpsswrd.Text, confirmpsswrd.Text);
+
+            if (flag)
+            {
+                DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
+            }
+
+        }
+
+        //create validators for everything else
+
+
+
+
     }
 }

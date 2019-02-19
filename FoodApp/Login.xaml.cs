@@ -1,4 +1,6 @@
 ﻿using System;
+using FoodApp.Model;
+using FoodApp.Services;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,10 +20,26 @@ namespace FoodApp
 
     }
     LogIn login = new LogIn();
-    private void Loginbtn_Clicked(object sender, EventArgs e)
-    {
-      login.username = usernm.Text;
-      login.password = psswrd.Text;
-    }
+        
+        
+        private void Loginbtn_Clicked(object sender, EventArgs e)
+        {
+
+            if (usernm.Text == "user")
+
+            {
+                if (psswrd.Text == "password")
+                {
+                    Navigation.PushAsync(new ProfilePage());
+
+                }
+
+
+
+
+            }
+          
+        }
+
   }
 }
