@@ -5,18 +5,18 @@
 
     <ScrollView>
         <StackLayout VerticalOptions="Center" Margin="10, 40, 10, 0">
-            <Entry x:Name="frstnm" Placeholder="First Name"></Entry>
-            <Entry x:Name="lstnm" Placeholder="Last Name"></Entry>
+            <Entry x:Name="frstnm" Placeholder="First Name" Keyboard="Text"></Entry>
+            <Entry x:Name="lstnm" Placeholder="Last Name" Keyboard="Text"></Entry>
 
-            <Entry x:Name="email" Placeholder="Email" TextChanged="Email_TextChanged"></Entry>
-            <Entry x:Name="newpsswrd" Placeholder="Password" IsPassword="True"></Entry>
-            <Entry x:Name="confirmpsswrd" Placeholder="Confirm Password" IsPassword="True" TextChanged="Confirmpsswrd_TextChanged" ></Entry>
+            <Entry x:Name="email" Keyboard="Email" Placeholder="Email" TextChanged="Email_TextChanged"></Entry>
+            <Entry x:Name="newpsswrd" Placeholder="Password" IsPassword="True" Keyboard="Default"></Entry>
+            <Entry x:Name="confirmpsswrd" Placeholder="Confirm Password" IsPassword="True" TextChanged="Confirmpsswrd_TextChanged" Keyboard="Default"></Entry>
             <Label  Text="Date Of Birth"></Label>
             <DatePicker x:Name="dob"></DatePicker>
             <Label Text="Height"></Label>
-            <Editor x:Name="hght" ></Editor>
+            <Editor x:Name="hght" Keyboard= "Default" ></Editor>
             <Label  Text="Weight"></Label>
-            <Editor x:Name="wgth"></Editor>
+            <Editor x:Name="wgth" Keyboard="Default"></Editor>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Save Password"></Label>
                 <Switch IsToggled="False"></Switch>
