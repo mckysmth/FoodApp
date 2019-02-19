@@ -44,7 +44,7 @@ namespace FoodApp
         {
             bool result = ValidatorExtensions.IsValidEmailAddress(email.Text);
 
-            if (result)
+            if (!result)
             {
                 DisplayAlert("Invalid e-mail", "please write a valid email", "OK");
             }
