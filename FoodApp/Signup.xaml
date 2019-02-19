@@ -14,9 +14,9 @@
             <Label  Text="Date Of Birth"></Label>
             <DatePicker x:Name="dob"></DatePicker>
             <Label Text="Height"></Label>
-            <Editor x:Name="hght" Keyboard= "Default" ></Editor>
+            <Editor x:Name="hght" Keyboard= "Numeric" ></Editor>
             <Label  Text="Weight"></Label>
-            <Editor x:Name="wgth" Keyboard="Default"></Editor>
+            <Editor x:Name="wgth" Keyboard="Numeric"></Editor>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Save Password"></Label>
                 <Switch IsToggled="False"></Switch>
