@@ -61,5 +61,11 @@ namespace FoodApp
             }
 
         }
+
+        //create validators for everything else
+
+
+
+
     }
 }
