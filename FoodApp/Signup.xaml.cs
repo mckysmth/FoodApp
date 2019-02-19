@@ -39,5 +39,10 @@ namespace FoodApp
             }
 
         }
+
+        private void Email_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bool result = ValidatorExtensions.IsValidEmailAddress(email.Text);
+        }
     }
 }
