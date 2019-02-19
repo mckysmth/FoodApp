@@ -22,13 +22,18 @@ namespace FoodApp
     LogIn login = new LogIn();
         
         
-        private void Loginbtn_Clicked(object sender, EventArgs e)
+        private async void Loginbtn_Clicked(object sender, EventArgs e)
         {
+            MongoService mongo = new MongoService();
 
-            if (usernm.Text == "user")
 
+            List<User> userList = await mongo.GetAllUsers();
+
+            User user = userList.Find(i => i.Email == usernm.Text);
+
+            if (user != null)
             {
-                if (psswrd.Text == "password")
+                if (psswrd.Text == user.Password)
                 {
                     Navigation.PushAsync(new ProfilePage());
 
