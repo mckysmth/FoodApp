@@ -37,6 +37,7 @@ namespace FoodApp
                 {
                     Navigation.PushAsync(new ProfilePage());
 
+
                 }
             }
           
