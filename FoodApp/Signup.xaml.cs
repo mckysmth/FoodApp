@@ -53,7 +53,15 @@ namespace FoodApp
 
             if (!result)
             {
-                DisplayAlert("Invalid e-mail", "please write a valid email", "OK");
+                //DisplayAlert("Invalid e-mail", "please write a valid email", "OK");
+                emailLabel.IsVisible = true;
+                emailLabel.Text = "invalid e-mail";
+                emailLabel.TextColor = Color.Red;
+            }
+
+            if (result)
+            {
+                emailLabel.IsVisible = false;
             }
 
         }
@@ -64,7 +72,16 @@ namespace FoodApp
 
             if (!flag)
             {
-                DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
+                //DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
+                confirmpsswrdLabel.IsVisible = true;
+                confirmpsswrdLabel.Text = "passwords are not equal";
+                confirmpsswrdLabel.TextColor = Color.Red;
+                
+            }
+
+            if(flag)
+            {
+                confirmpsswrdLabel.IsVisible = false;
             }
 
         }
