@@ -16,9 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Page1.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -35,5 +32,6 @@
   <ItemGroup>
     <Compile Remove="LogIn.cs" />
     <Compile Remove="SignUp.cs" />
+    <Compile Remove="MainPage.xaml.cs" />
   </ItemGroup>
 </Project>
