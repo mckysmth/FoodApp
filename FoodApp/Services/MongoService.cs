@@ -60,11 +60,13 @@ namespace FoodApp.Services
         {
             try
             {
-                var allTasks = await UserCollection
+                var filter = Builders<User>.Filter.Empty;
+                var allUsers = await UserCollection
                     .Find(new BsonDocument())
                     .ToListAsync();
 
-                return allTasks;
+
+                return allUsers;
             }
             catch (Exception ex)
             {

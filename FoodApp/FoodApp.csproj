@@ -32,4 +32,8 @@
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="LogIn.cs" />
+    <Compile Remove="SignUp.cs" />
+  </ItemGroup>
 </Project>
