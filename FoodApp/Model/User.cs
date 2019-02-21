@@ -1,11 +1,12 @@
 ﻿using System;
-using MongoDB.Bson;
+using SQLite;
 
 namespace FoodApp.Model
 {
     public class User
     {
-        public ObjectId Id { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -14,9 +15,13 @@ namespace FoodApp.Model
         public float Height { get; set; }
         public float Weight { get; set; }
 
+        public User()
+        {
+        
+        }
+
         public User(string firstName, string lastName, string email, string password, DateTime dob, float height, float weight)
         {
-            Id = ObjectId.GenerateNewId();
             FirstName = firstName;
             LastName = lastName;
             Email = email;

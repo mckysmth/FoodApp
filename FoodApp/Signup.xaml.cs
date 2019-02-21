@@ -38,10 +38,10 @@ namespace FoodApp
 
         if (user != null)
         {
-          MongoService mongoService = new MongoService();
+          //MongoService mongoService = new MongoService();
 
 
-          await mongoService.InsertNewUser(user);
+          //await mongoService.InsertNewUser(user);
         }
 
       }

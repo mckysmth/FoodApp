@@ -7,11 +7,22 @@ namespace FoodApp
 {
     public partial class App : Application
     {
+        public static string DatabaseLocation = string.Empty;
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new NavPage());
+        }
+
+        public App(String databaseLocation)
+        {
+            InitializeComponent();
+
+            MainPage = new NavigationPage(new NavPage());
+
+            DatabaseLocation = databaseLocation;
         }
 
         protected override void OnStart()

@@ -24,10 +24,12 @@ namespace FoodApp
         
         private async void Loginbtn_Clicked(object sender, EventArgs e)
         {
-            MongoService mongo = new MongoService();
+            //MongoService mongo = new MongoService();
 
 
-            List<User> userList = await mongo.GetAllUsers();
+            //List<User> userList = await mongo.GetAllUsers();
+            List<User> userList = new List<User>();
+
 
             user = userList.Find(i => i.Email.ToLower() == usernm.Text.ToLower());
 
