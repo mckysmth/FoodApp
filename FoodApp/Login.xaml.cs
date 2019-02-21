@@ -22,25 +22,31 @@ namespace FoodApp
     }
 
         
-        private async void Loginbtn_Clicked(object sender, EventArgs e)
+        private void Loginbtn_Clicked(object sender, EventArgs e)
         {
-            //MongoService mongo = new MongoService();
-
-
-            //List<User> userList = await mongo.GetAllUsers();
-            List<User> userList = new List<User>();
-
-
-            user = userList.Find(i => i.Email.ToLower() == usernm.Text.ToLower());
-
-            if (userList != null)
+            user = new User
             {
-                if (psswrd.Text == user.Password)
+                Email = usernm.Text,
+                Password = psswrd.Text
+            };
+
+            SQLService SQL = new SQLService();
+
+            User userDB = SQL.GetUserByEmail(user);
+            if (userDB != null)
+            {
+                if (userDB.Password == user.Password)
                 {
-                    Navigation.PushAsync(new ProfilePage());
-
-
+                    App.Current.MainPage.Navigation.PushAsync(new DoListPage());
                 }
+                else
+                {
+                    //ErrorMessage = "Incorrect Email/Password.";
+                }
+            }
+            else
+            {
+                //ErrorMessage = "Incorrect Email/Password.";
             }
           
         }

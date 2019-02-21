@@ -22,7 +22,7 @@ namespace FoodApp.Services
         }
 
 
-        public List<User> getUserList(User user)
+        public List<User> GetUserList(User user)
         {
             using (connection = new SQLiteConnection(App.DatabaseLocation))
             {
@@ -34,7 +34,7 @@ namespace FoodApp.Services
             }
         }
 
-        public User getUserByEmail(User user)
+        public User GetUserByEmail(User user)
         {
             using (connection = new SQLiteConnection(App.DatabaseLocation))
             {

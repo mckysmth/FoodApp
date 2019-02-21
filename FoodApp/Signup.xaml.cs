@@ -35,17 +35,29 @@ namespace FoodApp
 
         user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
 
+      }
 
-        if (user != null)
-        {
-          //MongoService mongoService = new MongoService();
+            SQLService SQL = new SQLService();
 
-
-          //await mongoService.InsertNewUser(user);
+            if (user.Password == confirmpsswrd.Text)
+            {
+                if (SQL.GetUserByEmail(user) == null)
+                {   
+                    SQL.InsertUser(user);
+                    App.Current.MainPage.Navigation.PushAsync(new DoListPage());
+                }
+                else
+                {
+                    //ErrorMessage = "Account already Exists.";
+                }
+            }
+            else
+            {
+                //ErrorMessage = "Passwords do not match.";
+            }
         }
 
-      }
-    }
+
 
         private void Email_TextChanged(object sender, TextChangedEventArgs e)
         {
