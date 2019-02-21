@@ -23,7 +23,7 @@ namespace FoodApp
 
 
 
-    private async void Signupbtn_Clicked(object sender, EventArgs e)
+    private void Signupbtn_Clicked(object sender, EventArgs e)
     {
       if (frstnm.Text == null || lstnm.Text == null || email.Text == null || newpsswrd.Text == null || dob.Date == null || hght.Text == null || wgth.Text == null)
       {
@@ -44,7 +44,7 @@ namespace FoodApp
                 if (SQL.GetUserByEmail(user) == null)
                 {   
                     SQL.InsertUser(user);
-                    App.Current.MainPage.Navigation.PushAsync(new DoListPage());
+                    App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
                 }
                 else
                 {
