@@ -37,7 +37,7 @@ namespace FoodApp
             {
                 if (userDB.Password == user.Password)
                 {
-                    App.Current.MainPage.Navigation.PushAsync(new DoListPage());
+                    App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
                 }
                 else
                 {

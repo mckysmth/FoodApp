@@ -44,7 +44,7 @@ namespace FoodApp.Services
 
                 User returnUser = users.FirstOrDefault(u => u.Email == user.Email);
 
-                return user;
+                return returnUser;
             }
         }
     }
