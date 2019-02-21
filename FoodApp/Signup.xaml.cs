@@ -49,11 +49,13 @@ namespace FoodApp
                 else
                 {
                     //ErrorMessage = "Account already Exists.";
+                    DisplayAlert("Account already Exists.", "email is taken", "OK");
                 }
             }
             else
             {
                 //ErrorMessage = "Passwords do not match.";
+                DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
             }
         }
 
