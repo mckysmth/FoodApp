@@ -37,27 +37,39 @@ namespace FoodApp
 
       }
 
-            SQLService SQL = new SQLService();
+      SQLService SQL = new SQLService();
 
-            if (user.Password == confirmpsswrd.Text)
-            {
-                if (SQL.GetUserByEmail(user) == null)
-                {   
-                    SQL.InsertUser(user);
-                    App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
-                }
-                else
-                {
-                    //ErrorMessage = "Account already Exists.";
-                    DisplayAlert("Account already Exists.", "email is taken", "OK");
-                }
-            }
-            else
-            {
-                //ErrorMessage = "Passwords do not match.";
-                DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
-            }
+      bool result = ValidatorExtensions.IsValidEmailAddress(email.Text);
+
+      //validates information and creates new user in the database
+      if (result)
+      {
+
+        if (user.Password == confirmpsswrd.Text)
+        {
+          if (SQL.GetUserByEmail(user) == null)
+          {
+            SQL.InsertUser(user);
+            App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
+          }
+          else
+          {
+            //ErrorMessage = "Account already Exists.";
+            DisplayAlert("Account already Exists.", "email is taken", "OK");
+          }
         }
+        else
+        {
+          //ErrorMessage = "Passwords do not match.";
+          DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
+        }
+      }
+      else
+      {
+        //Error message if the emails is not valid
+        DisplayAlert("Check e-mail address", "Enter a valid e-mail", "OK");
+      }
+    }
 
 
 
