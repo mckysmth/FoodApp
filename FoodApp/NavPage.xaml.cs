@@ -27,5 +27,10 @@ namespace FoodApp
         {
             Navigation.PushAsync(new Signup());
         }
+
+    private void SearchBtn_Clicked(object sender, EventArgs e)
+    {
+      Navigation.PushAsync(new SearchSettings());
     }
+  }
 }
