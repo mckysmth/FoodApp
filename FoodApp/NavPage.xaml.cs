@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using FoodApp.Services;
 using Xamarin.Forms;
 
 namespace FoodApp
@@ -10,6 +10,7 @@ namespace FoodApp
         public NavPage()
         {
             InitializeComponent();
+            GooglePlacesService googlePlaces = new GooglePlacesService(40.758480, -111.888138);
         }
 
          void ProfilePageBtn_Clicked(object sender, System.EventArgs e)
