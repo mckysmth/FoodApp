@@ -47,7 +47,7 @@ namespace FoodApp.Services
             string response = await client.GetStringAsync(URL);
 
             dynamic data = JObject.Parse(response);
-            Console.Write(data["results"]);
+            //Console.Write(data["results"]);
         }
     }
 }
