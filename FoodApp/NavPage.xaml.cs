@@ -64,5 +64,11 @@ namespace FoodApp
                 places.AddRange(restaurents);
             }
         }
+
+        private void Swipe_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Swipe());
+
+        }
     }
 }

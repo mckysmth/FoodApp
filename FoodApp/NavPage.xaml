@@ -14,6 +14,9 @@
             
             <Image x:Name="img" />
 
+            <Button x:Name="Swipe" Text="Swipe" Clicked="Swipe_Clicked"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
