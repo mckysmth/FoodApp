@@ -9,6 +9,10 @@
 
             <Button x:Name="SignUpBtn" Text="Sign Up" Clicked="SignUpBtn_Clicked"/>
             <Button x:Name="SearchBtn" Text="Search (remove later)" Clicked="SearchBtn_Clicked"/>
+            <Button x:Name="PlaceList" Text="Show Random Place" Clicked="Handle_Clicked"/>
+            <Button x:Name="nextPage" Text="next page" Clicked="Handle_Clicked_1Async"/>
+            
+            <Image x:Name="img" />
 
         </StackLayout>
     </ContentPage.Content>
