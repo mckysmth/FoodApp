@@ -16,15 +16,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="PlacePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="ProfilePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="SearchSettings.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -36,5 +36,10 @@
     <Compile Remove="LogIn.cs" />
     <Compile Remove="SignUp.cs" />
     <Compile Remove="MainPage.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="PlacePage.xaml.cs">
+      <DependentUpon>PlacePage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

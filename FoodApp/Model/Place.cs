@@ -26,7 +26,7 @@ namespace FoodApp.Model
 
         public string GetPhotoURL()
         {
-            string URL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=" 
+            string URL = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1400&photoreference=" 
             + PhotoReference 
                 + "&key=" 
             + API_KEY;

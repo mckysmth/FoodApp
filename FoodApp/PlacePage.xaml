@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodApp.Model.PlacePage">
+    <ContentPage.Content>
+        <Grid Margin="10,10,10,10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image x:Name="PictureFrame" Grid.Row="0"> </Image>
+            
+            <Label  
+                x:Name ="PlaceName"
+               Grid.Row="1" >Office Supplies</Label>
+
+            <Label 
+                x:Name="Rating"
+               Grid.Row="2" >Salary</Label>
+
+            <Label 
+                x:Name="Address"
+               Grid.Row="3" >20000</Label>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
