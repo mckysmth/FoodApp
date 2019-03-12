@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using FoodApp.Model;
 using SQLite;
+
 namespace FoodApp.Services
 {
     public class SQLService

@@ -68,6 +68,12 @@ namespace FoodApp
         private void PlacePage_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new PlacePage());
+
+        private void Swipe_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new Swipe());
+
+
         }
     }
 }
