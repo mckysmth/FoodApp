@@ -65,9 +65,17 @@ namespace FoodApp
             }
         }
 
-        private void PlacePage_Clicked(object sender, EventArgs e)
+        async void PlacePage_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PlacePage());
+            googlePlacesService = new GooglePlacesService(40.235119, -111.662193);
+            if (places == null)
+            {
+                places = await googlePlacesService.GetPlaceList();
+            }
+            Place place = places[1];
+            await Navigation.PushAsync(new PlacePage(place));
+
+        }
 
         private void Swipe_Clicked(object sender, EventArgs e)
         {
