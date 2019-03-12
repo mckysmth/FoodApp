@@ -20,7 +20,7 @@ namespace FoodApp
         public Swipe()
         {
             InitializeComponent();
-            gps = new GooglePlacesService(40, -111);
+            gps = new GooglePlacesService(40.235119, -111.662193);
             places = new ObservableCollection<Place>();
             InitPlaceList();
             //places = await gps.GetPlaceList();
@@ -50,6 +50,7 @@ namespace FoodApp
 
             }
             TestLabel.Text = places[0].Name;
+            TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
             places.Remove(places[0]);
 
         }
@@ -63,6 +64,7 @@ namespace FoodApp
                 case SwipeDirection.Left:
                     //await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
                     TestLabel.Text = places[0].Name;
+                    TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
                     places.Remove(places[0]);
                     break;
                 case SwipeDirection.Right:
