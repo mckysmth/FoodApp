@@ -29,6 +29,10 @@ namespace FoodApp.Model
             //googlePlacesService = new GooglePlacesService(40.235119, -111.662193);
             Getpicture();
 
+            PlaceName.Text = place.Name;
+            Rating.Text = place.Rating.ToString();
+            Address.Text = place.Address;
+
 
 
         }

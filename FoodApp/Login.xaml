@@ -9,6 +9,7 @@
 
 
     <ContentPage.Content>
+        <ScrollView>
         <Grid BackgroundColor="White">
 
             <Grid.RowDefinitions>
@@ -19,7 +20,7 @@
             <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0" Grid.Row="0">
 
                 <!--????????????????????????????????????????????????????-->
-                <Label Text="@XamarinGuy"/>
+                <Label Text="Food"/>
                 <Image Source="Pictures/greatgrampa.jpg" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/>
 
             </StackLayout>
@@ -74,11 +75,12 @@
                 </StackLayout>
 
             </Grid>
+            
 
             <StackLayout Grid.Row="2" BackgroundColor="#ffffff">
 
                 <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
-                <Label Text="Dont'Have Account Login? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label Text="Dont'Have Account? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
 
             </StackLayout>
@@ -86,6 +88,7 @@
 
 
         </Grid>
+        </ScrollView>
 
 
 

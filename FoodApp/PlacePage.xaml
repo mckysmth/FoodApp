@@ -15,15 +15,15 @@
             
             <Label  
                 x:Name ="PlaceName"
-               Grid.Row="1" >Office Supplies</Label>
+               Grid.Row="1" >Name</Label>
 
             <Label 
                 x:Name="Rating"
-               Grid.Row="2" >Salary</Label>
+               Grid.Row="2" >Rating</Label>
 
             <Label 
                 x:Name="Address"
-               Grid.Row="3" >20000</Label>
+               Grid.Row="3" >Address</Label>
 
 
         </Grid>
