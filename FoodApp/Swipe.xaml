@@ -2,23 +2,25 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodApp.Swipe">
-    <ContentPage.Content>
-        <StackLayout>
-            <Image x:Name="TestImg"/>
-            <Label x:Name="TestLabel" Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <Frame x:Name="frame">
+            <StackLayout WidthRequest="400"
+                         HeightRequest="400">
+                <Image x:Name="TestImg"/>
+                <Label x:Name="TestLabel"/>
 
-            <BoxView Color="Teal">
-                <BoxView.GestureRecognizers>
-                    <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped"/>
-                    <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
-                    <SwipeGestureRecognizer Direction="Up" Swiped="OnSwiped"/>
-                    <SwipeGestureRecognizer Direction="Down" Swiped="OnSwiped"/>
-                </BoxView.GestureRecognizers>
-            </BoxView>
-        </StackLayout>
+                
+            </StackLayout> 
+        <Frame.GestureRecognizers>
+            <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped"/>
+            <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
+            <SwipeGestureRecognizer Direction="Up" Swiped="OnSwiped"/>
+            <SwipeGestureRecognizer Direction="Down" Swiped="OnSwiped"/>
+        </Frame.GestureRecognizers>
+    </Frame>
+        
+            
+        
 
 
-    </ContentPage.Content>
+    
 </ContentPage>

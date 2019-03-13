@@ -77,7 +77,7 @@ namespace FoodApp
         }
 
         private void Swipe_Clicked(object sender, EventArgs e)
-        {
+        {            
             Navigation.PushAsync(new Swipe());
 
 
