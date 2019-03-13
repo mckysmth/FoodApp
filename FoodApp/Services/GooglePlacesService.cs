@@ -50,8 +50,15 @@ namespace FoodApp.Services
             string response = await client.GetStringAsync(URL);
 
             JObject data = JObject.Parse(response);
+            try
+            {
+                NextPageToken = data["next_page_token"].ToString();
 
-            NextPageToken = data["next_page_token"].ToString();
+            }
+            catch (Exception ex)
+            {
+                NextPageToken = string.Empty;
+            }
 
 
             List<JObject> results = data["results"].ToObject<List<JObject>>();

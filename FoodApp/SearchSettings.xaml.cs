@@ -15,7 +15,7 @@ namespace FoodApp
     public SearchSettings()
     {
       InitializeComponent();
-      textLabel.Text = theSlider.Value.ToString();
+    //  textLabel.Text = theSlider.Value.ToString();
     }
 
     private void SubmitBtn_Clicked(object sender, EventArgs e)

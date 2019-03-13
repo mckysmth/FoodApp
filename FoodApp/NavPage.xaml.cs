@@ -9,13 +9,12 @@ namespace FoodApp
     public partial class NavPage : ContentPage
     {
 
-        List<Place> places;
-        GooglePlacesService googlePlacesService;
+
         public NavPage()
         {
             InitializeComponent();
 
-            googlePlacesService = new GooglePlacesService(40.235119, -111.662193);
+            //googlePlacesService = new GooglePlacesService(40.235119, -111.662193);
 
         }
 
@@ -42,43 +41,43 @@ namespace FoodApp
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
 
-            if (places == null)
-            {
-                places = await googlePlacesService.GetPlaceList();
-            }
-            Random rnd = new Random();
-            int r = rnd.Next(places.Count);
+            //if (places == null)
+            //{
+            //    places = await googlePlacesService.GetPlaceList();
+            //}
+            //Random rnd = new Random();
+            //int r = rnd.Next(places.Count);
 
-            Place place = places[r];
+            //Place place = places[r];
 
-            img.Source = ImageSource.FromUri(new Uri(place.GetPhotoURL()));
+            //img.Source = ImageSource.FromUri(new Uri(place.GetPhotoURL()));
         }
 
         async void Handle_Clicked_1Async(object sender, System.EventArgs e)
         {
-            if (googlePlacesService.NextPageToken != string.Empty)
-            {
-                places.Clear();
-                var restaurents = await googlePlacesService.NextPageAsync();
+            //if (googlePlacesService.NextPageToken != string.Empty)
+            //{
+            //    places.Clear();
+            //    var restaurents = await googlePlacesService.NextPageAsync();
 
-                places.AddRange(restaurents);
-            }
+            //    places.AddRange(restaurents);
+            //}
         }
 
         async void PlacePage_Clicked(object sender, EventArgs e)
         {
-            googlePlacesService = new GooglePlacesService(40.235119, -111.662193);
-            if (places == null)
-            {
-                places = await googlePlacesService.GetPlaceList();
-            }
-            Place place = places[1];
-            await Navigation.PushAsync(new PlacePage(place));
+            //googlePlacesService = new GooglePlacesService(40.235119, -111.662193);
+            //if (places == null)
+            //{
+            //    places = await googlePlacesService.GetPlaceList();
+            //}
+            //Place place = places[1];
+            //await Navigation.PushAsync(new PlacePage(place));
 
         }
 
         private void Swipe_Clicked(object sender, EventArgs e)
-        {
+        {            
             Navigation.PushAsync(new Swipe());
 
 

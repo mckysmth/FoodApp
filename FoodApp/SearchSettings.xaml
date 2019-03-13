@@ -6,16 +6,16 @@
         <StackLayout>
             <!-- I don't know if we are using miles or what-->
             <Label Text="Distance" />
-           
+
             <Slider x:Name="theSlider" 
                     Minimum="0" 
                     Maximum="100"
                     MinimumTrackColor="Blue"
                     MaximumTrackColor="Red"/>
-            
+
             <!--fix this-->
-            <Label x:Name="textLabel" Text="{Binding distance}" /> 
-            
+            <Label x:Name="textResult" Text="{Binding Value, Source={x:Reference theSlider}}" />
+
             <Button x:Name="submitBtn" 
                     Text="Submit" 
                     Clicked="SubmitBtn_Clicked" />
