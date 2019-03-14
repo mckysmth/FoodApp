@@ -19,57 +19,64 @@ namespace FoodApp
         {
             InitializeComponent();
             user = null;
+#pragma warning disable CS0618 // Type or member is obsolete
+            alreadyAccountLabel.GestureRecognizers.Add(item: new TapGestureRecognizer((view) => OnLabelClicked()));
+#pragma warning restore CS0618 // Type or member is obsolete
         }
 
-
-
-    private void Signupbtn_Clicked(object sender, EventArgs e)
-    {
-      if (frstnm.Text == null || lstnm.Text == null || email.Text == null || newpsswrd.Text == null || dob.Date == null || hght.Text == null || wgth.Text == null)
-      {
-        DisplayAlert("Empty field error", "please verify you entered all the required information and try again", "OK");
-      }
-      else
-      {
-        DateTime dOB = dob.Date;
-
-        user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
-
-      }
-
-      SQLService SQL = new SQLService();
-
-      bool result = ValidatorExtensions.IsValidEmailAddress(email.Text);
-
-      //validates information and creates new user in the database
-      if (result)
-      {
-
-        if (user.Password == confirmpsswrd.Text)
+        private void OnLabelClicked()
         {
-          if (SQL.GetUserByEmail(user) == null)
-          {
-            SQL.InsertUser(user);
-            App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
-          }
-          else
-          {
-            //ErrorMessage = "Account already Exists.";
-            DisplayAlert("Account already Exists.", "email is taken", "OK");
-          }
+            Navigation.PushAsync(new Login());
         }
-        else
+
+        private void Signupbtn_Clicked(object sender, EventArgs e)
         {
-          //ErrorMessage = "Passwords do not match.";
-          DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
+            if (frstnm.Text == null || lstnm.Text == null || email.Text == null || newpsswrd.Text == null || dob.Date == null || hght.Text == null || wgth.Text == null)
+             {
+                 DisplayAlert("Empty field error", "please verify you entered all the required information and try again", "OK");
+             }
+            else
+            {
+             DateTime dOB = dob.Date;
+
+                user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
+                Navigation.PushAsync(new Swipe());
+
+            }
+
+            SQLService SQL = new SQLService();
+
+            bool result = ValidatorExtensions.IsValidEmailAddress(email.Text);
+
+              //validates information and creates new user in the database
+              if (result)
+              {
+
+                 if (user.Password == confirmpsswrd.Text)
+                 {
+                    if (SQL.GetUserByEmail(user) == null)
+                    {
+                        SQL.InsertUser(user);
+                        App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
+                    }
+                    else
+                    {
+                        //ErrorMessage = "Account already Exists.";
+                        DisplayAlert("Account already Exists.", "email is taken", "OK");
+                    }
+                 }
+                else
+                {
+                  //ErrorMessage = "Passwords do not match.";
+                  DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
+                }
+              }
+              else
+              {
+                //Error message if the emails is not valid
+                DisplayAlert("Check e-mail address", "Enter a valid e-mail", "OK");
+              }
         }
-      }
-      else
-      {
-        //Error message if the emails is not valid
-        DisplayAlert("Check e-mail address", "Enter a valid e-mail", "OK");
-      }
-    }
 
 
 

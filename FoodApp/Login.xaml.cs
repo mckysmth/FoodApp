@@ -19,9 +19,17 @@ namespace FoodApp
     {
       InitializeComponent();
             user = null;
-    }
+#pragma warning disable CS0618 // Type or member is obsolete
+            noAccountLabel.GestureRecognizers.Add(item: new TapGestureRecognizer((view) => OnLabelClicked()));
+#pragma warning restore CS0618 // Type or member is obsolete
 
-        
+        }
+
+        private void OnLabelClicked()
+        {
+            Navigation.PushAsync(new Signup());
+        }
+
         private void Loginbtn_Clicked(object sender, EventArgs e)
         {
             user = new User
@@ -48,7 +56,7 @@ namespace FoodApp
             {
                 //ErrorMessage = "Incorrect Email/Password.";
             }
-          
+            Navigation.PushAsync(new Swipe());
         }
 
   }

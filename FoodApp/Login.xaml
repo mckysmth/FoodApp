@@ -80,7 +80,7 @@
             <StackLayout Grid.Row="2" BackgroundColor="#ffffff">
 
                 <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
-                <Label Text="Dont'Have Account? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+                <Label x:Name="noAccountLabel"     Text="Dont'Have Account? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
 
             </StackLayout>
