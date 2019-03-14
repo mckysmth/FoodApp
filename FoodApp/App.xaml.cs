@@ -13,14 +13,14 @@ namespace FoodApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new NavPage());
+            MainPage = new NavigationPage(new Login());
         }
 
         public App(String databaseLocation)
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new NavPage());
+            MainPage = new NavigationPage(new Login());
 
             DatabaseLocation = databaseLocation;
         }
