@@ -15,7 +15,7 @@ namespace FoodApp.Model
 
       
 	{
-
+        
         //List<Place> places;
         //GooglePlacesService googlePlacesService;
         Place place;
