@@ -65,18 +65,18 @@ namespace FoodApp.Services
 
             List<Place> places = new List<Place>();
 
-            foreach (var item in results)
+            for (int i = 0; i < results.Count; i++)
             {
-                Place place = new Place
-                {
-                    Name = item["name"].ToString(),
-                    Latitude = (double)item["geometry"]["location"]["lat"],
-                    Longitude = (double)item["geometry"]["location"]["lng"],
-                    OpenNow = (bool)item["opening_hours"]["open_now"],
-                    Rating = (double)item["rating"],
-                    Address = item["vicinity"].ToString(),
-                    PhotoReference = item["photos"][0]["photo_reference"].ToString()
-                };
+                Place place = new Place();
+
+                place.Name = results[i]["name"].ToString();
+                place.Latitude = (double)results[i]["geometry"]["location"]["lat"];
+                place.Longitude = (double)results[i]["geometry"]["location"]["lng"];
+                //place.OpenNow = (bool)results[i]["opening_hours"]["open_now"];
+                place.Rating = (double)results[i]["rating"];
+                place.Address = results[i]["vicinity"].ToString();
+                place.PhotoReference = results[i]["photos"][0]["photo_reference"].ToString();
+                
 
                 places.Add(place);
             }
