@@ -5,9 +5,7 @@
              x:Class="FoodApp.Login"
              BackgroundColor="White">
 
-
-
-
+   
     <ContentPage.Content>
         <ScrollView>
         <Grid BackgroundColor="White">
@@ -21,7 +19,7 @@
 
                 <!--????????????????????????????????????????????????????-->
                 <Label Text="Food"/>
-                <Image Source="Pictures/greatgrampa.jpg" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/>
+                    <Image Source="https://en.wikipedia.org/wiki/Food#/media/File:Foods.jpg" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/>
 
             </StackLayout>
 
