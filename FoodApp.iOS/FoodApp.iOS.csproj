@@ -160,4 +160,13 @@
       <Name>FoodApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\student.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\background5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pizza.jpg" />
+  </ItemGroup>
 </Project>
