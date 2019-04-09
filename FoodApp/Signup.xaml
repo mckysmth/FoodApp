@@ -23,8 +23,8 @@
                 <Label Text="Save Password"></Label>
                 <Switch IsToggled="False"></Switch>
             </StackLayout>
-            <Button x:Name="signupbtn" Clicked="Signupbtn_Clicked" Text="Sign Up"></Button>
-            <Label x:Name="alreadyAccountLabel"   Text="Already have account? Sign In" TextColor="Blue"></Label>
+            <Button x:Name="signupbtn" Clicked="Signupbtn_Clicked" Text="Sign Up" BackgroundColor="#f7b50e"></Button>
+            <Label x:Name="alreadyAccountLabel"   Text="Already have account? Sign In" TextColor="#f7b50e"></Label>
         </StackLayout>
     </ScrollView>
     <!--grtggtgtrtg-->

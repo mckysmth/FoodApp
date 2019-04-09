@@ -15,6 +15,9 @@ namespace FoodApp
     public partial class Swipe : ContentPage
     {
         ObservableCollection<Place> places;
+
+    //places for which the user swiped right
+        List<Location> wantedPlaces;
         GooglePlacesService gps;
         double Latitude;
         double Longitude;
@@ -28,7 +31,7 @@ namespace FoodApp
             tapGestureRecognizer.Tapped += Tapped_handlerAsync;
             frame.GestureRecognizers.Add(tapGestureRecognizer);
 
-
+            wantedPlaces = new List<Location>();
 
 
 
@@ -90,8 +93,7 @@ namespace FoodApp
 
 
         }
-
-
+    
 
         async void OnSwiped(object sender, SwipedEventArgs e)
         {
@@ -104,17 +106,22 @@ namespace FoodApp
                     break;
                 case SwipeDirection.Right:
                     var location = new Location(places[0].Latitude, places[0].Longitude);
-                    var options = new MapLaunchOptions { Name = places[0].Name };
+                    //add vlocation to a list of places to go
+                    wantedPlaces.Add(location);
 
-                    await Map.OpenAsync(location, options);
-                    //Device.OpenUri(new Uri("https://www.google.com/maps/search/?api=1&query="
-                    //+ places[0].Latitude 
-                    //+"," 
-                    //+ places[0].Longitude));
-                    break;
+          //var options = new MapLaunchOptions { Name = places[0].Name };
+
+          //await Map.OpenAsync(location, options);
+
+
+          //Device.OpenUri(new Uri("https://www.google.com/maps/search/?api=1&query="
+          //+ places[0].Latitude 
+          //+"," 
+          //+ places[0].Longitude));
+          break;
                 case SwipeDirection.Up:
-                    // Handle the swipe
-                    break;
+       
+          break;
                 case SwipeDirection.Down:
                     // Handle the swipe
                     break;
