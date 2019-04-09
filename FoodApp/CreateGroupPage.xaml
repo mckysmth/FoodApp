@@ -7,6 +7,6 @@
             
             
         </StackLayout>
-        <Button Text="Everyone's In"/>
+        <Button Text="Everyone's In" Clicked="Handle_Clicked"/>
     </StackLayout>
 </ContentPage>

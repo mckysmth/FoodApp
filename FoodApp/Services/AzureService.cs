@@ -66,6 +66,22 @@ namespace FoodApp.Services
         {
             await App.MobileService.GetTable<Place>().InsertAsync(place);
         }
+
+        public async static System.Threading.Tasks.Task<List<Place>> GetPlacesByGroup(Group group)
+        {
+            return await App.MobileService.GetTable<Place>().Where(p => p.GroupID == group.Id).ToListAsync();
+
+        }
+
+        public async static System.Threading.Tasks.Task InsertResult(Place place)
+        {
+            Result result = new Result
+            {
+                PlaceId = place.Id
+            };
+
+            await App.MobileService.GetTable<Result>().InsertAsync(result);
+        }
     }
 
 }
