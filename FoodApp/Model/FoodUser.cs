@@ -3,10 +3,10 @@ using SQLite;
 
 namespace FoodApp.Model
 {
-    public class User
+    public class FoodUser
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
@@ -15,13 +15,14 @@ namespace FoodApp.Model
         public float Height { get; set; }
         public float Weight { get; set; }
 
-        public User()
+        public FoodUser()
         {
-        
+            Id = Guid.NewGuid().ToString();
         }
 
-        public User(string firstName, string lastName, string email, string password, DateTime dob, float height, float weight)
+        public FoodUser(string firstName, string lastName, string email, string password, DateTime dob, float height, float weight)
         {
+            Id = Guid.NewGuid().ToString();
             FirstName = firstName;
             LastName = lastName;
             Email = email;

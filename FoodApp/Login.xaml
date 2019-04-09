@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FoodApp"
              x:Class="FoodApp.Login"
-             BackgroundImage="Background4.jpg">
+             BackgroundImage="background5.jpg">
 
 
-    <ContentPage.Content BackgroundImage="Background4.jpg">
+    <ContentPage.Content BackgroundImage="background5.jpg">
         <ScrollView >
             <Grid >
 
@@ -54,7 +54,7 @@
                         <Label BackgroundColor="#f7b50e" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
 
                     
-                    <Image Source="faceb.jpg" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+                    <Image Source="pizza.jpg" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
 
 
                         <Label BackgroundColor="#f7b50e" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>

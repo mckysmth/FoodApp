@@ -14,7 +14,7 @@ namespace FoodApp
 [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Signup : ContentPage
     {
-        User user;
+        FoodUser user;
         public Signup()
         {
             InitializeComponent();
@@ -29,22 +29,22 @@ namespace FoodApp
             Navigation.PushAsync(new Login());
         }
 
-        private void Signupbtn_Clicked(object sender, EventArgs e)
+        private async void Signupbtn_Clicked(object sender, EventArgs e)
         {
             if (frstnm.Text == null || lstnm.Text == null || email.Text == null || newpsswrd.Text == null || dob.Date == null || hght.Text == null || wgth.Text == null)
              {
-                 DisplayAlert("Empty field error", "please verify you entered all the required information and try again", "OK");
+                 await DisplayAlert("Empty field error", "please verify you entered all the required information and try again", "OK");
              }
             else
             {
              DateTime dOB = dob.Date;
 
-                user = new User(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
-                Navigation.PushAsync(new Swipe());
+                user = new FoodUser(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
+                //await Navigation.PushAsync(new Swipe()); 
 
             }
 
-            SQLService SQL = new SQLService();
+            //SQLService SQL = new SQLService();
 
             bool result = ValidatorExtensions.IsValidEmailAddress(email.Text);
 
@@ -54,27 +54,28 @@ namespace FoodApp
 
                  if (user.Password == confirmpsswrd.Text)
                  {
-                    if (SQL.GetUserByEmail(user) == null)
+                    if (await AzureService.GetUserByEmail(user) == null)
                     {
-                        SQL.InsertUser(user);
-                        App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
+                        App.User = user;
+                        await AzureService.InsertUser(user);
+                        await Navigation.PushAsync(new Swipe());
                     }
                     else
                     {
                         //ErrorMessage = "Account already Exists.";
-                        DisplayAlert("Account already Exists.", "email is taken", "OK");
+                        await DisplayAlert("Account already Exists.", "email is taken", "OK");
                     }
                  }
                 else
                 {
-                  //ErrorMessage = "Passwords do not match.";
-                  DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
+                    //ErrorMessage = "Passwords do not match.";
+                    await DisplayAlert("Passwords are not equeal", "confirm password again", "OK");
                 }
               }
               else
               {
                 //Error message if the emails is not valid
-                DisplayAlert("Check e-mail address", "Enter a valid e-mail", "OK");
+                await DisplayAlert("Check e-mail address", "Enter a valid e-mail", "OK");
               }
         }
 

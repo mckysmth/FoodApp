@@ -78,7 +78,7 @@ namespace FoodApp
 
         private void Tapped_handlerAsync(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PlacePage(places[0]));
+            //Navigation.PushAsync(new PlacePage(places[0]));
         }
 
         private async void InitPlaceList()
@@ -127,6 +127,16 @@ namespace FoodApp
                     break;
                 
             }
+        }
+
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new CreateGroupPage());
+        }
+
+        void Handle_Clicked_1(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new JoinGroupPage());
         }
     }
 }

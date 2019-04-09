@@ -1,4 +1,6 @@
 ﻿using System;
+using FoodApp.Model;
+using Microsoft.WindowsAzure.MobileServices;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,13 +9,20 @@ namespace FoodApp
 {
     public partial class App : Application
     {
+
         public static string DatabaseLocation = string.Empty;
+
+        public static MobileServiceClient MobileService =
+            new MobileServiceClient(
+                "https://polar.azurewebsites.net"
+            );
+        public static FoodUser User;
 
         public App()
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Login());
+            MainPage = new FoodApp.MainPage();
         }
 
         public App(String databaseLocation)
