@@ -46,7 +46,7 @@ namespace FoodApp
                 if (userDB.Password == user.Password)
                 {
                     App.User = userDB;
-                    await Navigation.PushAsync(new Swipe());
+                    App.Current.MainPage = new MainPage();
                 }
                 else
                 {

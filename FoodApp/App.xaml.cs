@@ -29,7 +29,7 @@ namespace FoodApp
         {
             InitializeComponent();
 
-            MainPage = new FoodApp.MainPage();
+            MainPage = new NavigationPage(new Login());
 
             DatabaseLocation = databaseLocation;
         }

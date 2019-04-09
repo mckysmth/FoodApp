@@ -58,7 +58,10 @@ namespace FoodApp
                     {
                         App.User = user;
                         await AzureService.InsertUser(user);
-                        await Navigation.PushAsync(new Swipe());
+                        App.Current.MainPage = new MainPage();
+
+
+                        //await Navigation.PushAsync(new Swipe());
                     }
                     else
                     {
