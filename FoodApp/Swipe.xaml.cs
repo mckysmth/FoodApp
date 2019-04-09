@@ -97,6 +97,8 @@ namespace FoodApp
                 places = new List<Place>();
 
                 places.AddRange(await AzureService.GetPlacesByGroup(group));
+
+                InitPlaceList();
             }
 
 
@@ -111,11 +113,15 @@ namespace FoodApp
 
         private async void InitPlaceList()
         {
-            foreach (var item in await gps.GetPlaceList())
+            if (group == null)
             {
-                places.Add(item);
+                foreach (var item in await gps.GetPlaceList())
+                {
+                    places.Add(item);
 
+                }
             }
+
             TestLabel.Text = places[0].Name;
             TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
 
