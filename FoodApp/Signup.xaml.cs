@@ -40,7 +40,7 @@ namespace FoodApp
              DateTime dOB = dob.Date;
 
                 user = new FoodUser(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
-                //await Navigation.PushAsync(new Swipe()); 
+                await Navigation.PushAsync(new MainPage()); 
 
             }
 

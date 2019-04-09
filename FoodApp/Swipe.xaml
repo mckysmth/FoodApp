@@ -11,7 +11,7 @@
                      HeightRequest="400"
                      BackgroundColor="#f7b50e">
             <Image x:Name="TestImg" />
-                <Label x:Name="TestLabel"/>
+            <Label x:Name="TestLabel"/>
             
 
             <Button Text="Create Group" Clicked="Handle_Clicked"/>
