@@ -10,7 +10,7 @@
 
             <Label Text="Profile Settings" Font="Bold, Large" />
 
-            <Button Text="Edit Profile" BackgroundColor="YellowGreen"   
+            <Button Text="Edit Profile" BackgroundColor="#f7b50e"   
                  />
 
 

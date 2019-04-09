@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodApp.Swipe">
-    <Frame x:Name="frame">
-            <StackLayout WidthRequest="400"
-                         HeightRequest="400">
-                <Image x:Name="TestImg"/>
-                <Label x:Name="TestLabel"/>
+             x:Class="FoodApp.Swipe"
+             >
+    
+    <Frame x:Name="frame"
+          >
 
-                
-            </StackLayout> 
+        <StackLayout WidthRequest="400"
+                     HeightRequest="400"
+                     BackgroundColor="#f7b50e">
+            <Image x:Name="TestImg" />
+                <Label x:Name="TestLabel"/>
+            
+
+
+        </StackLayout> 
         <Frame.GestureRecognizers>
+
             <SwipeGestureRecognizer Direction="Left" Swiped="OnSwiped"/>
             <SwipeGestureRecognizer Direction="Right" Swiped="OnSwiped"/>
             <SwipeGestureRecognizer Direction="Up" Swiped="OnSwiped"/>
