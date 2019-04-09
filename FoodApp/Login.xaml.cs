@@ -46,7 +46,7 @@ namespace FoodApp
                 if (userDB.Password == user.Password)
                 {
                     App.User = userDB;
-                    await Navigation.PushAsync(new ProfilePage());
+                    await Navigation.PushAsync(new Swipe());
                 }
                 else
                 {
@@ -57,7 +57,6 @@ namespace FoodApp
             {
                 //ErrorMessage = "Incorrect Email/Password.";
             }
-            await Navigation.PushAsync(new Swipe());
         }
 
   }

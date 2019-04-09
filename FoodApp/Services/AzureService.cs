@@ -21,9 +21,23 @@ namespace FoodApp.Services
             return (await App.MobileService.GetTable<Group>().Where(g => g.GroupCode == GroupCode).ToListAsync()).FirstOrDefault();
         }
 
-        public async static Task<List<UserGroup>> GetAllUsersInGroup(Group group)
+        public async static Task<List<FoodUser>> GetAllUsersInGroup(Group group)
         {
-            return await App.MobileService.GetTable<UserGroup>().Where(ug => ug.GroupId == group.Id).ToListAsync();
+            List<FoodUser> users = new List<FoodUser>();
+
+            List<UserGroup> userGroup = await App.MobileService.GetTable<UserGroup>().Where(ug => ug.GroupId == group.Id).ToListAsync();
+
+            foreach (var item in userGroup)
+            {
+                FoodUser user = (await App.MobileService.GetTable<FoodUser>().Where(u => u.Id == item.UserID).ToListAsync()).FirstOrDefault();
+                if (user != null)
+                {
+                    users.Add(user);
+                }
+            }
+
+            return users;
+
         }
 
         public async static System.Threading.Tasks.Task JoinGroup(Group group, FoodUser user)
