@@ -154,5 +154,9 @@ namespace FoodApp
 
         }
 
+        void Handle_Clicked(object sender, System.EventArgs e)
+        {
+            Navigation.PushAsync(new Swipe(group));
+        }
     }
 }
