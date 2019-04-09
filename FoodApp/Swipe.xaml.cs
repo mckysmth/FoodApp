@@ -14,13 +14,14 @@ namespace FoodApp
 {
     public partial class Swipe : ContentPage
     {
-        ObservableCollection<Place> places;
+        List<Place> places;
 
     //places for which the user swiped right
-        List<Location> wantedPlaces;
         GooglePlacesService gps;
         double Latitude;
         double Longitude;
+        private Group group;
+
         public Swipe()
         {
             InitializeComponent();
@@ -31,46 +32,73 @@ namespace FoodApp
             tapGestureRecognizer.Tapped += Tapped_handlerAsync;
             frame.GestureRecognizers.Add(tapGestureRecognizer);
 
-            wantedPlaces = new List<Location>();
 
 
 
         }
+
+        public Swipe(Group group)
+        {
+
+            InitializeComponent();
+
+
+
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += Tapped_handlerAsync;
+            frame.GestureRecognizers.Add(tapGestureRecognizer);
+
+
+            this.group = group;
+
+
+        }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            try
+            if (group == null)
             {
-                var request = new GeolocationRequest(GeolocationAccuracy.Best);
-                var location = await Geolocation.GetLocationAsync(request);
-
-                if (location != null)
+                try
                 {
-                    Latitude = location.Latitude;
-                    Longitude = location.Longitude;
-                    //Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
-                }
-            }
-            catch (FeatureNotSupportedException fnsEx)
-            {
-                // Handle not supported on device exception
-            }
-            catch (FeatureNotEnabledException fneEx)
-            {
-                // Handle not enabled on device exception
-            }
-            catch (PermissionException pEx)
-            {
-                // Handle permission exception
-            }
-            catch (Exception ex)
-            {
-                // Unable to get location
-            }
-            gps = new GooglePlacesService(Latitude, Longitude);
-            places = new ObservableCollection<Place>();
+                    var request = new GeolocationRequest(GeolocationAccuracy.Best);
+                    var location = await Geolocation.GetLocationAsync(request);
 
-            InitPlaceList();
+                    if (location != null)
+                    {
+                        Latitude = location.Latitude;
+                        Longitude = location.Longitude;
+                        //Console.WriteLine($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
+                    }
+                }
+                catch (FeatureNotSupportedException fnsEx)
+                {
+                    // Handle not supported on device exception
+                }
+                catch (FeatureNotEnabledException fneEx)
+                {
+                    // Handle not enabled on device exception
+                }
+                catch (PermissionException pEx)
+                {
+                    // Handle permission exception
+                }
+                catch (Exception ex)
+                {
+                    // Unable to get location
+                }
+                gps = new GooglePlacesService(Latitude, Longitude);
+                places = new List<Place>();
+
+                InitPlaceList();
+            } 
+            else
+            {
+                places = new List<Place>();
+
+                places.AddRange(await AzureService.GetPlacesByGroup(group));
+            }
+
 
         }
 
@@ -78,7 +106,7 @@ namespace FoodApp
 
         private void Tapped_handlerAsync(object sender, EventArgs e)
         {
-            //Navigation.PushAsync(new PlacePage(places[0]));
+            Navigation.PushAsync(new PlacePage(places[0]));
         }
 
         private async void InitPlaceList()
@@ -97,6 +125,7 @@ namespace FoodApp
 
         async void OnSwiped(object sender, SwipedEventArgs e)
         {
+
             switch (e.Direction)
             {
                 case SwipeDirection.Left:
@@ -105,20 +134,36 @@ namespace FoodApp
                     TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
                     break;
                 case SwipeDirection.Right:
-                    var location = new Location(places[0].Latitude, places[0].Longitude);
-                    //add vlocation to a list of places to go
-                    wantedPlaces.Add(location);
 
-          //var options = new MapLaunchOptions { Name = places[0].Name };
+                    if (group == null)
+                    {
+                        var location = new Location(places[0].Latitude, places[0].Longitude);
+                        //add vlocation to a list of places to go
 
-          //await Map.OpenAsync(location, options);
+                        var options = new MapLaunchOptions { Name = places[0].Name };
+
+                        await Map.OpenAsync(location, options);
+                    }
+                    else
+                    {
+                        await AzureService.InsertResult(places[0]);
+
+                        places.Remove(places[0]);
+
+                        if (places.Count > 0)
+                        {
+                            TestLabel.Text = places[0].Name;
+                            TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
+                        }
+                        else
+                        {
+
+                        }
+
+                    }
 
 
-          //Device.OpenUri(new Uri("https://www.google.com/maps/search/?api=1&query="
-          //+ places[0].Latitude 
-          //+"," 
-          //+ places[0].Longitude));
-          break;
+                    break;
                 case SwipeDirection.Up:
        
           break;
@@ -127,6 +172,8 @@ namespace FoodApp
                     break;
                 
             }
+
+            
         }
 
         void Handle_Clicked(object sender, System.EventArgs e)

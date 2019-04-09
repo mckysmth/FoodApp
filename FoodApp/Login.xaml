@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FoodApp"
              x:Class="FoodApp.Login"
-             BackgroundImage="Background2.jpg">
+             BackgroundImage="background5.jpg">
 
 
-    <ContentPage.Content BackgroundImage="Background2.jpg">
+    <ContentPage.Content BackgroundImage="background5.jpg">
         <ScrollView >
             <Grid >
 
@@ -35,8 +35,8 @@
 
                 </Grid.RowDefinitions>
                 <Image Source="student.png" HeightRequest="90" VerticalOptions="EndAndExpand"/>
-                    <Entry x:Name="usernm" Grid.Row="1" Placeholder="Email or Phone Number" PlaceholderColor="#f7b50e" FontSize="16"/>
-                    <Entry x:Name="psswrd" Grid.Row="2" Placeholder="Password" PlaceholderColor="#f7b50e" FontSize="16"/>
+                    <Entry x:Name="usernm" Grid.Row="1" Placeholder="Email or Phone Number" PlaceholderColor="#f7b50e" FontSize="16" TextColor="#f7b50e"/>
+                    <Entry x:Name="psswrd" Grid.Row="2" Placeholder="Password" PlaceholderColor="#f7b50e" FontSize="16" TextColor="#f7b50e"/>
                     <Button x:Name="Loginbtn" Clicked="Loginbtn_Clicked" Text="LogIn" BackgroundColor="#f7b50e" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3"/>
                     <Label Text="LoginTrouble? GetHelp" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/>
 
@@ -54,7 +54,7 @@
                         <Label BackgroundColor="#f7b50e" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
 
                     
-                    <Image Source="faceb.jpg" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+                    <Image Source="pizza.jpg" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
 
 
                         <Label BackgroundColor="#f7b50e" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
