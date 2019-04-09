@@ -22,4 +22,10 @@
   <ItemGroup>
     <Folder Include="Pictures\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

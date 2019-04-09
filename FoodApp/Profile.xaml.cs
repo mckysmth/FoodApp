@@ -7,9 +7,9 @@ using Xamarin.Forms;
 
 namespace FoodApp
 {
-    public partial class MainPage : ContentPage
+    public partial class Profile : ContentPage
     {
-        public MainPage()
+        public Profile()
         {
             InitializeComponent();
         }
