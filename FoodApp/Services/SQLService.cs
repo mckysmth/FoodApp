@@ -10,11 +10,11 @@ namespace FoodApp.Services
 
         SQLiteConnection connection;
 
-        public void InsertUser(User user)
+        public void InsertUser(FoodUser user)
         {
             using (connection = new SQLiteConnection(App.DatabaseLocation))
             {
-                connection.CreateTable<User>();
+                connection.CreateTable<FoodUser>();
 
                 connection.Insert(user);
 
@@ -22,27 +22,27 @@ namespace FoodApp.Services
         }
 
 
-        public List<User> GetUserList(User user)
+        public List<FoodUser> GetUserList(FoodUser user)
         {
             using (connection = new SQLiteConnection(App.DatabaseLocation))
             {
-                connection.CreateTable<User>();
+                connection.CreateTable<FoodUser>();
 
-                List<User> users = connection.Table<User>().ToList();
+                List<FoodUser> users = connection.Table<FoodUser>().ToList();
 
                 return users;
             }
         }
 
-        public User GetUserByEmail(User user)
+        public FoodUser GetUserByEmail(FoodUser user)
         {
             using (connection = new SQLiteConnection(App.DatabaseLocation))
             {
-                connection.CreateTable<User>();
+                connection.CreateTable<FoodUser>();
 
-                List<User> users = connection.Table<User>().ToList();
+                List<FoodUser> users = connection.Table<FoodUser>().ToList();
 
-                User returnUser = users.FirstOrDefault(u => u.Email == user.Email);
+                FoodUser returnUser = users.FirstOrDefault(u => u.Email == user.Email);
 
                 return returnUser;
             }

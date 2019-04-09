@@ -1,8 +1,12 @@
 ﻿using System;
+using Newtonsoft.Json;
+
 namespace FoodApp.Model
 {
     public class Place
     {
+        public string Id { get; set; }
+
         public string Name { get; set; }
 
         public double Latitude { get; set; }
@@ -17,10 +21,12 @@ namespace FoodApp.Model
 
         public string PhotoReference { get; set; }
 
+        [JsonIgnore]
         public string API_KEY { get; set; }
 
         public Place()
         {
+
             API_KEY = "AIzaSyAeWb6Bi96MdM3EWU5Fl0OxwRv6WiwvB_4";
         }
 

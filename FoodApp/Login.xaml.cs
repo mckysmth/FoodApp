@@ -14,7 +14,7 @@ namespace FoodApp
   [XamlCompilation(XamlCompilationOptions.Compile)]
   public partial class Login : ContentPage
   {
-        User user;
+        FoodUser user;
     public Login()
     {
       InitializeComponent();
@@ -30,22 +30,23 @@ namespace FoodApp
             Navigation.PushAsync(new Signup());
         }
 
-        private void Loginbtn_Clicked(object sender, EventArgs e)
+        private async void Loginbtn_Clicked(object sender, EventArgs e)
         {
-            user = new User
+            user = new FoodUser
             {
                 Email = usernm.Text,
                 Password = psswrd.Text
             };
 
-            SQLService SQL = new SQLService();
+            //SQLService SQL = new SQLService();
 
-            User userDB = SQL.GetUserByEmail(user);
+            FoodUser userDB = await AzureService.GetUserByEmail(user);
             if (userDB != null)
             {
                 if (userDB.Password == user.Password)
                 {
-                    App.Current.MainPage.Navigation.PushAsync(new ProfilePage());
+                    App.User = userDB;
+                    await Navigation.PushAsync(new ProfilePage());
                 }
                 else
                 {
@@ -56,7 +57,7 @@ namespace FoodApp
             {
                 //ErrorMessage = "Incorrect Email/Password.";
             }
-            Navigation.PushAsync(new Swipe());
+            await Navigation.PushAsync(new Swipe());
         }
 
   }
