@@ -3,10 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FoodApp"
              x:Class="FoodApp.Login"
-             BackgroundImage="images.jpg">
+             BackgroundImage="Background2.jpg">
 
 
-    <ContentPage.Content BackgroundImage="images.jpg">
+    <ContentPage.Content BackgroundImage="Background2.jpg">
         <ScrollView >
             <Grid >
 
@@ -17,9 +17,7 @@
                 </Grid.RowDefinitions>
                 <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0" Grid.Row="0">
 
-                <!--????????????????????????????????????????????????????-->
-                <Label Text="Food"/>
-                    <Image Source="https://en.wikipedia.org/wiki/Food#/media/File:Foods.jpg" Opacity="0.6" VerticalOptions="Start" Margin="0,3,0,0"/>
+               
 
             </StackLayout>
 
@@ -36,11 +34,11 @@
                     <RowDefinition Height="*"/>
 
                 </Grid.RowDefinitions>
-                <Image Source="Samir.png" HeightRequest="70" VerticalOptions="EndAndExpand"/>
-                <Entry x:Name="usernm" Grid.Row="1" Placeholder="Email or Phone Number" PlaceholderColor="#bababa" FontSize="16"/>
-                <Entry x:Name="psswrd" Grid.Row="2" Placeholder="Password" PlaceholderColor="#bababa" FontSize="16"/>
-                <Button x:Name="Loginbtn" Clicked="Loginbtn_Clicked" Text="LogIn" BackgroundColor="#3897f0" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3"/>
-                <Label Text="LoginTrouble?GetHelp" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/>
+                <Image Source="student.png" HeightRequest="90" VerticalOptions="EndAndExpand"/>
+                    <Entry x:Name="usernm" Grid.Row="1" Placeholder="Email or Phone Number" PlaceholderColor="#f7b50e" FontSize="16"/>
+                    <Entry x:Name="psswrd" Grid.Row="2" Placeholder="Password" PlaceholderColor="#f7b50e" FontSize="16"/>
+                    <Button x:Name="Loginbtn" Clicked="Loginbtn_Clicked" Text="LogIn" BackgroundColor="#f7b50e" TextColor="White" HeightRequest="50" VerticalOptions="Start" Grid.Row="3"/>
+                    <Label Text="LoginTrouble? GetHelp" HorizontalOptions="Center" Grid.Row="4" Margin="0,10,0,0" FontSize="12"/>
 
                 <Grid Grid.Row="5">
 
@@ -53,12 +51,13 @@
 
 
                     </Grid.ColumnDefinitions>
-                    <Label BackgroundColor="#bababa" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label BackgroundColor="#f7b50e" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
 
-                    <Image Source="gf.png" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
+                    
+                    <Image Source="faceb.jpg" Grid.Column="1" VerticalOptions="Center" Margin="10,0,10,0"/>
 
 
-                    <Label BackgroundColor="#bababa" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+                        <Label BackgroundColor="#f7b50e" Grid.Column="2" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
 
 
 
@@ -67,21 +66,23 @@
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Grid.Row="6">
 
 
-                    <Label Text="LoginWithFacebook" TextColor="#485992"  />
+                   <Label Text="Login With Facebook" TextColor="#f7b50e"  />
+                    
+                    
 
 
                 </StackLayout>
 
             </Grid>
-            
-
-            <StackLayout Grid.Row="2" BackgroundColor="#ffffff">
-
-                <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
-                <Label x:Name="noAccountLabel"     Text="Dont'Have Account? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
 
 
-            </StackLayout>
+                <StackLayout Grid.Row="2" BackgroundColor="#f7b50e">
+
+                    <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
+                    <Label x:Name="noAccountLabel"     Text="Don't Have an Account? SignUp" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+
+                </StackLayout>
 
 
 
