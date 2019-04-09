@@ -51,5 +51,8 @@
     <Compile Update="PlacePage.xaml.cs">
       <DependentUpon>PlacePage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="CreateGroupPage.xaml.cs">
+      <DependentUpon>CreateGroupPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

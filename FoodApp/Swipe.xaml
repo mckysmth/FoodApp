@@ -14,7 +14,8 @@
                 <Label x:Name="TestLabel"/>
             
 
-
+            <Button Text="Create Group" Clicked="Handle_Clicked"/>
+            <Button Text="join Group" Clicked="Handle_Clicked_1"/>
         </StackLayout> 
         <Frame.GestureRecognizers>
 

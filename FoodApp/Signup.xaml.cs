@@ -40,7 +40,7 @@ namespace FoodApp
              DateTime dOB = dob.Date;
 
                 user = new FoodUser(frstnm.Text, lstnm.Text, email.Text, newpsswrd.Text, dOB, float.Parse(hght.Text), float.Parse(wgth.Text));
-                await Navigation.PushAsync(new Swipe());
+                //await Navigation.PushAsync(new Swipe()); 
 
             }
 
@@ -56,8 +56,9 @@ namespace FoodApp
                  {
                     if (await AzureService.GetUserByEmail(user) == null)
                     {
+                        App.User = user;
                         await AzureService.InsertUser(user);
-                        await Navigation.PushAsync(new ProfilePage());
+                        await Navigation.PushAsync(new Swipe());
                     }
                     else
                     {
