@@ -21,6 +21,8 @@ namespace FoodApp.Model
 
         public string PhotoReference { get; set; }
 
+        public string GroupID { get; set; }
+
         [JsonIgnore]
         public string API_KEY { get; set; }
 

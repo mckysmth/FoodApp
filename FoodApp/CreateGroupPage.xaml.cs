@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using FoodApp.Model;
 using FoodApp.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace FoodApp
@@ -13,12 +14,15 @@ namespace FoodApp
         List<FoodUser> users;
         private bool IsJoining;
 
+
         public CreateGroupPage()
         {
             InitializeComponent();
             group = new Group();
             GroupCode.Text = group.GroupCode;
             users = new List<FoodUser>();
+
+
 
             Device.StartTimer(TimeSpan.FromSeconds(7), () =>
             {
@@ -53,6 +57,66 @@ namespace FoodApp
             {
                 await AzureService.InsertGroupAsync(group);
                 await AzureService.JoinGroup(group, App.User);
+                GooglePlacesService placesService = null;
+
+
+                List<Place> places = new List<Place>();
+                try
+                {
+                    var request = new GeolocationRequest(GeolocationAccuracy.Best);
+                    var location = await Geolocation.GetLocationAsync(request);
+
+
+                    if (location != null)
+                    {
+                        placesService = new GooglePlacesService(location.Latitude, location.Longitude);
+                    }
+                }
+                catch (FeatureNotSupportedException fnsEx)
+                {
+                    // Handle not supported on device exception
+                }
+                catch (FeatureNotEnabledException fneEx)
+                {
+                    // Handle not enabled on device exception
+                }
+                catch (PermissionException pEx)
+                {
+                    // Handle permission exception
+                }
+                catch (Exception ex)
+                {
+                    // Unable to get location
+                }
+
+                if (placesService != null)
+                {
+                    if (await placesService.GetPlaceList() is List<Place> googlePlaces)
+                    {
+                        places.AddRange(googlePlaces);
+                    }
+
+                    while (await placesService.NextPageAsync() is List<Place> googlePlacesList)
+                    {
+                        places.AddRange(googlePlacesList);
+                    }
+                }
+
+                if (places.Count > 0)
+                {
+                    for (int i = 0; i < 5; i++)
+                    {
+                        var rnd = new Random(DateTime.Now.Millisecond);
+                        int ticks = rnd.Next(0, places.Count);
+
+                        places[ticks].GroupID = group.Id;
+
+                        await AzureService.InsertPlace(places[ticks]);
+
+                        places.Remove(places[ticks]);
+                    }
+                }
+
             }
         }
 

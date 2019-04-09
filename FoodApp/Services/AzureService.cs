@@ -61,6 +61,11 @@ namespace FoodApp.Services
         {
             await App.MobileService.GetTable<FoodUser>().InsertAsync(user);
         }
+
+        public async static System.Threading.Tasks.Task InsertPlace(Place place)
+        {
+            await App.MobileService.GetTable<Place>().InsertAsync(place);
+        }
     }
 
 }

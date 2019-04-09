@@ -46,6 +46,7 @@ namespace FoodApp.Services
 
         public async Task<List<Place>> GetPlaceList()
         {
+
             HttpClient client = new HttpClient();
             string response = await client.GetStringAsync(URL);
 
@@ -81,12 +82,18 @@ namespace FoodApp.Services
                 places.Add(place);
             }
 
+
+
             return places;
 
         }
 
         public async Task<List<Place>> NextPageAsync()
         {
+            if (NextPageToken == string.Empty)
+            {
+                return null;
+            }
             string nextPageURL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?pagetoken=" 
             + NextPageToken 
                 + "&key=" 
