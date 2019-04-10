@@ -46,18 +46,28 @@ namespace FoodApp.Services
 
             var query = places.GroupBy((arg) => arg.PlaceId);
 
-            string winner;
+            string winner = (query.SelectMany((arg) => arg).ToList())[0].PlaceId;
 
+            int c = 0;
             foreach (var result in query)
             {
                 
                 var groupKey = result.Key;
-                winner = groupKey;
+
+                if (result.Count() > c)
+                {
+                    winner = groupKey;
+                }
                 //var i = groupKey.Count;
             }
 
-            return new Place();
+            return await GetPlaceById(winner);
 
+        }
+
+        public async static Task<Place> GetPlaceById(string id)
+        {
+            return (await App.MobileService.GetTable<Place>().Where(p => p.Id == id).ToListAsync()).FirstOrDefault();
         }
 
         public async static Task<bool> EveryoneIsDoneAsync(Group group)
