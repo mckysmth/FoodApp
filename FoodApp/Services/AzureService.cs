@@ -40,6 +40,44 @@ namespace FoodApp.Services
 
         }
 
+        public async static Task<Place> GetWinningPlace(Group group)
+        {
+            List<Result> places = await App.MobileService.GetTable<Result>().Where(r => r.GroupId == group.Id).ToListAsync();
+
+            var query = places.GroupBy((arg) => arg.PlaceId);
+
+            string winner;
+
+            foreach (var result in query)
+            {
+                
+                var groupKey = result.Key;
+                winner = groupKey;
+                //var i = groupKey.Count;
+            }
+
+            return new Place();
+
+        }
+
+        public async static Task<bool> EveryoneIsDoneAsync(Group group)
+        {
+            List<FoodUser> users = new List<FoodUser>();
+
+            List<UserGroup> userGroup = await App.MobileService.GetTable<UserGroup>().Where(ug => ug.GroupId == group.Id).ToListAsync();
+
+            foreach (var item in userGroup)
+            {
+                FoodUser user = (await App.MobileService.GetTable<FoodUser>().Where(u => u.Id == item.UserID && u.IsPlaying).ToListAsync()).FirstOrDefault();
+                if (user != null)
+                {
+                    users.Add(user);
+                }
+            }
+
+            return users.Count == 0;
+        }
+
         public async static System.Threading.Tasks.Task JoinGroup(Group group, FoodUser user)
         {
             UserGroup userGroup = new UserGroup
@@ -49,6 +87,11 @@ namespace FoodApp.Services
             };
 
             await App.MobileService.GetTable<UserGroup>().InsertAsync(userGroup); ;
+        }
+
+        public async static System.Threading.Tasks.Task UpdateUser(FoodUser user)
+        {
+            await App.MobileService.GetTable<FoodUser>().UpdateAsync(user);       
         }
 
         public async static System.Threading.Tasks.Task<FoodUser> GetUserByEmail(FoodUser user)
@@ -73,11 +116,12 @@ namespace FoodApp.Services
 
         }
 
-        public async static System.Threading.Tasks.Task InsertResult(Place place)
+        public async static System.Threading.Tasks.Task InsertResult(Place place, Group group)
         {
             Result result = new Result
             {
-                PlaceId = place.Id
+                PlaceId = place.Id,
+                GroupId = group.Id
             };
 
             await App.MobileService.GetTable<Result>().InsertAsync(result);

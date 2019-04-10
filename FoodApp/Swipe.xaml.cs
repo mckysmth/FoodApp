@@ -135,9 +135,19 @@ namespace FoodApp
             switch (e.Direction)
             {
                 case SwipeDirection.Left:
-                    places.Remove(places[0]);
-                    TestLabel.Text = places[0].Name;
-                    TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
+                    if (places.Count != 1)
+                    {
+                        places.Remove(places[0]);
+                        TestLabel.Text = places[0].Name;
+                        TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
+                    }
+                    else
+                    {
+                        App.User.IsPlaying = false;
+                        await AzureService.UpdateUser(App.User);
+
+                        await Navigation.PushAsync(new ResultsPage(group));
+                    }
                     break;
                 case SwipeDirection.Right:
 
@@ -152,18 +162,21 @@ namespace FoodApp
                     }
                     else
                     {
-                        await AzureService.InsertResult(places[0]);
+                        await AzureService.InsertResult(places[0], group);
 
-                        places.Remove(places[0]);
 
-                        if (places.Count > 0)
+                        if (places.Count != 1)
                         {
+                            places.Remove(places[0]);
                             TestLabel.Text = places[0].Name;
                             TestImg.Source = ImageSource.FromUri(new Uri(places[0].GetPhotoURL()));
                         }
                         else
                         {
+                            App.User.IsPlaying = false;
+                            await AzureService.UpdateUser(App.User);
 
+                            await Navigation.PushAsync(new ResultsPage(group));
                         }
 
                     }

@@ -14,6 +14,7 @@ namespace FoodApp.Model
         public DateTime Dob { get; set; }
         public float Height { get; set; }
         public float Weight { get; set; }
+        public Boolean IsPlaying { get; set; }
 
         public FoodUser()
         {

@@ -17,6 +17,10 @@ namespace FoodApp
         {
             Group group = await AzureService.GetGroup(GroupCode.Text);
             await AzureService.JoinGroup(group, App.User);
+
+            App.User.IsPlaying = true;
+            await AzureService.UpdateUser(App.User);
+
             await Navigation.PushAsync(new CreateGroupPage(true, group));
         }
     }

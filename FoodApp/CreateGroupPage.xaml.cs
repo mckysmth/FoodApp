@@ -59,6 +59,8 @@ namespace FoodApp
                 await AzureService.JoinGroup(group, App.User);
                 GooglePlacesService placesService = null;
 
+                App.User.IsPlaying = true;
+                await AzureService.UpdateUser(App.User);
 
                 List<Place> places = new List<Place>();
                 try

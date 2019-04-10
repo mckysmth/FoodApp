@@ -6,5 +6,7 @@ namespace FoodApp.Model
         public string Id { get; set; }
 
         public string PlaceId { get; set; }
+
+        public string GroupId { get; set; }
     }
 }
