@@ -25,7 +25,14 @@ namespace FoodApp
         public Swipe()
         {
             InitializeComponent();
-            
+
+            //if (Xamarin.Forms.Application.Current.MainPage is NavigationPage navigationPage && navigationPage.CurrentPage is MasterDetailPage nestedMasterDetail)
+            //{
+            //    nestedMasterDetail.IsGestureEnabled = false;
+            //}
+
+
+            //MasterPage.IsEnabled = false;
 
 
             var tapGestureRecognizer = new TapGestureRecognizer();
@@ -41,7 +48,6 @@ namespace FoodApp
         {
 
             InitializeComponent();
-
 
 
             var tapGestureRecognizer = new TapGestureRecognizer();

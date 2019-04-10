@@ -26,7 +26,7 @@ namespace FoodApp
             {
                 Findresults();
 
-                return (ResultsPlease.Text != "Waiting for everyone to finish!");
+                return true;
             });
 
         }
