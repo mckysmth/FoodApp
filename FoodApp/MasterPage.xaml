@@ -13,7 +13,9 @@
                 <x:Array Type="{x:Type local:MasterPageItem}">
                     <local1:MasterPageItem Title="Profile" IconSource="contacts.png" TargetType="{x:Type local1:ProfilePage}" />
                     <local1:MasterPageItem Title="Swipe" IconSource="todo.png" TargetType="{x:Type local1:Swipe}" />
-                    <local1:MasterPageItem Title="Login" IconSource="reminders.png" TargetType="{x:Type local1:Login}" />
+                    <local1:MasterPageItem Title="Login" IconSource="contacts.png" TargetType="{x:Type local1:Login}" />
+                    <local1:MasterPageItem Title="Create Group" IconSource="contacts.png" TargetType="{x:Type local1:CreateGroupPage}" />
+                    <local1:MasterPageItem Title="Join Group" IconSource="contacts.png" TargetType="{x:Type local1:JoinGroupPage}" />
                 </x:Array>
             </ListView.ItemsSource>
             <ListView.ItemTemplate>
